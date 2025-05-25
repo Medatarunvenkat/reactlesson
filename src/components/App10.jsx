@@ -41,33 +41,82 @@ function ShoppingCart() {
     };
 
     return (
-        <div>
-            <div>
-                <h2>Products</h2>
+        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+            <div style={{ marginBottom: '30px' }}>
+                <h2 style={{ color: '#333', marginBottom: '20px' }}>Products</h2>
                 {products.map(product => (
-                    <div key={product.id}>
-                        <span>{product.name}-${product.price}</span>
-                        <button onClick={()=> addtoCart(product)}>Add to Cart</button>
+                    <div key={product.id} style={{ 
+                        display: 'flex', 
+                        justifyContent: 'space-between', 
+                        alignItems: 'center',
+                        padding: '10px',
+                        border: '1px solid #ddd',
+                        marginBottom: '10px',
+                        borderRadius: '5px'
+                    }}>
+                        <span style={{ fontSize: '16px' }}>{product.name}-${product.price}</span>
+                        <button onClick={()=> addtoCart(product)} style={{
+                            padding: '8px 15px',
+                            backgroundColor: '#4CAF50',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '4px',
+                            cursor: 'pointer'
+                        }}>Add to Cart</button>
                     </div>
                 ))}
             </div>
 
-            <div>
-                <h2>My Cart</h2>
+            <div style={{ marginTop: '20px' }}>
+                <h2 style={{ color: '#333', marginBottom: '20px' }}>My Cart</h2>
                 {cart.map(item => (
-                    <div key={item.id}>
-                        <span>{item.name}</span>
-                        <div>
-                            <button onClick={()=>updatequantity(item.id, -1)}>-</button>
-                            <span>{item.quantity}</span>
-                            <button onClick={()=>updatequantity(item.id, 1)}>+</button>
+                    <div key={item.id} style={{ 
+                        display: 'flex', 
+                        justifyContent: 'space-between', 
+                        alignItems: 'center',
+                        padding: '10px',
+                        border: '1px solid #ddd',
+                        marginBottom: '10px',
+                        borderRadius: '5px'
+                    }}>
+                        <span style={{ fontSize: '16px' }}>{item.name}</span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                            <button onClick={()=>updatequantity(item.id, -1)} style={{
+                                padding: '5px 10px',
+                                backgroundColor: '#f44336',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '4px',
+                                cursor: 'pointer'
+                            }}>-</button>
+                            <span style={{ fontSize: '16px' }}>{item.quantity}</span>
+                            <button onClick={()=>updatequantity(item.id, 1)} style={{
+                                padding: '5px 10px',
+                                backgroundColor: '#4CAF50',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '4px',
+                                cursor: 'pointer'
+                            }}>+</button>
                         </div>
-                        <span>${item.price*item.quantity}</span>
-                        <button onClick={() => removefromcart(item.id)}>Delete</button>
+                        <span style={{ fontSize: '16px' }}>${item.price*item.quantity}</span>
+                        <button onClick={() => removefromcart(item.id)} style={{
+                            padding: '8px 15px',
+                            backgroundColor: '#f44336',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '4px',
+                            cursor: 'pointer'
+                        }}>Delete</button>
                     </div>
                 ))}
-                <div>
-                    <h3>Total: ${calculatetotal()}</h3>
+                <div style={{ 
+                    marginTop: '20px', 
+                    padding: '15px',
+                    backgroundColor: '#f5f5f5',
+                    borderRadius: '5px'
+                }}>
+                    <h3 style={{ margin: 0, color: '#333' }}>Total: ${calculatetotal()}</h3>
                 </div>
             </div>
         </div>
