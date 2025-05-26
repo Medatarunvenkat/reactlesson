@@ -33,13 +33,13 @@ function App15(){
             <button onClick={handleAdd}>Add</button>
             <p>Result:<span ref={resultRef}></span></p>
             <input
-        type="text"
-        placeholder="enter a color (like red, green)"
-        ref={colorRef}
-        onChange={handleColor}
-      />
-      <p style={{ color: colortext }}>Hello World</p>
-        </div>
+            type="text"
+            placeholder="enter a color (like red, green)"
+            ref={colorRef}
+            onChange={handleColor}
+            />
+            <p style={{ color: colortext }}>Hello World</p>
+            </div>
     )
 }
 export default App15;
