@@ -32,9 +32,13 @@ function App15(){
             <input type="text" placeholder="enter number 2" ref={num2Ref}/>
             <button onClick={handleAdd}>Add</button>
             <p>Result:<span ref={resultRef}></span></p>
-            <input type="text" placeholder="enter something" ref={colorRef} onChange={handleColor}/>
-            <button>Submit to get the colour</button>
-            <p style={{color:"blue"}}>{colortext}</p>
+            <input
+        type="text"
+        placeholder="enter a color (like red, green)"
+        ref={colorRef}
+        onChange={handleColor}
+      />
+      <p style={{ color: colortext }}>Hello World</p>
         </div>
     )
 }

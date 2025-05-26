@@ -14,7 +14,7 @@ function App16() {
     <div>
       <h1>App16</h1>
       <h2>useRef to store previous number</h2>
-      <input type="number" onChange={handleChange} />
+      <input type="number" onChange={handleChange}/>
       <p>Previous value:{prevValueRef.current}</p>
       <p>Current value:{value}</p>
     </div>
