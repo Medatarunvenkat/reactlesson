@@ -1,6 +1,5 @@
-import React, { use } from "react";
-import { useEffect, useState } from "react";
-import "./App13.css"
+import React, { useEffect, useState } from "react";
+import "./App13.css";
 export default function App13() {
   const [num, setNum] = useState(0);
   const [result1, setResult1] = useState(0);
@@ -29,7 +28,7 @@ export default function App13() {
           </div>
         </div>
         <p>
-          <input type="number" onChange={(e)=>setNum(e.target.value)} />
+          <input type="number" onChange={(e)=>setNum(Number(e.target.value))} />
         </p>
         <div className="App13-Row">
           <div>
