@@ -14,7 +14,7 @@ function App14(){
     },[])
 
     const names=users.filter((user)=>
-        user.name.includes(search.toLowerCase())
+        user.name.toLowerCase().includes(search.toLowerCase())
     );
     
     return(
@@ -26,8 +26,10 @@ function App14(){
 
             </p>
             <ul>
-                {names.map((user)=>(
-                    <li key={user.id}>{user.name}</li>
+                {names.map((user) => (
+                    <li key={user.id}>
+                        <strong>ID:</strong>{user.id} |<strong>Name:</strong>{user.name} |<strong>City:</strong>{user.address.city}
+                    </li>
                 ))}
             </ul>
         </div>
