@@ -11,8 +11,6 @@ export default function App16() {
         msgRef.current.style.color = "green";
       } else if (num < prevNum.current) {
         msgRef.current.style.color = "red";
-      } else {
-        msgRef.current.style.color = "black";
       }
     }
     prevNum.current = num;
